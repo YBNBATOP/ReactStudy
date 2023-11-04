@@ -1,5 +1,16 @@
+import { useState } from "react";
+import Search from "./components/Search";
+
 function App() {
-  return <div className="App">YES!</div>;
+  const [foodData, setFoodData] = useState([]);
+  return (
+    <div>
+      <Search foodData={foodData} setFoodData={setFoodData} />
+      {foodData.map((food) => (
+        <h1>{food.title}</h1>
+      ))}
+    </div>
+  );
 }
 
 export default App;
